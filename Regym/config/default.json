@@ -1,0 +1,5 @@
+{
+    "mongoURI": "mongodb+srv://P2CMS:P2CMS@cms-uqdfa.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret": "mysecrettoken"
+
+}

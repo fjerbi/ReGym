@@ -1,0 +1,72 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+
+    <ion-buttons end>
+      <button ion-button >
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-card *ngIf="recipe">
+  <img src="{{recipe.recipe_picture}}"/>
+  <ion-card-content>
+    <ion-card-title>
+      {{recipe.title | uppercase}}
+    </ion-card-title>
+    <ion-item>
+      <ion-badge color="success">Calories : {{recipe.calories}}</ion-badge>
+    </ion-item>
+    <p>
+      {{recipe.description}}
+    </p>
+  </ion-card-content>
+  <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="star"></ion-icon>
+        <div>5 stars</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>8 Comments</div>
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-card>
+<div [hidden]="recipe || errMess">
+  <ion-spinner></ion-spinner>
+  <h4>Loading . . . Please Wait</h4>
+</div>
+<div *ngIf="errMess">
+  <h2>Error</h2>
+  <h4>{{errMess}}</h4>
+</div>
+
+<ion-list *ngIf="recipe">
+  <ion-list-header>
+    Comments
+  </ion-list-header>
+
+</ion-list>
+
+<ion-fab bottom right >
+<button ion-fab >
+  <ion-icon name="heart-outline"></ion-icon>
+</button>
+</ion-fab>
+
+<ion-fab bottom right>
+  <button ion-fab>
+    <ion-icon name="heart"></ion-icon>
+  </button>
+  </ion-fab>
+
+</ion-content>
