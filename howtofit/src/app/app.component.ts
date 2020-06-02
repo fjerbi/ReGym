@@ -5,6 +5,7 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
+import { CustommealplanPage } from '../pages/custommealplan/custommealplan';
 
 
 @Component({
@@ -26,7 +27,8 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'Our Recipes', component: RecipesPage },
-      { title: 'Customized workouts', component: WorkoutPage }
+      { title: 'Customized workouts', component: WorkoutPage },
+      { title: 'Customized meal plan', component: CustommealplanPage },
     ];
 
   }

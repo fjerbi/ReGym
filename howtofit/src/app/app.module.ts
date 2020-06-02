@@ -1,3 +1,7 @@
+import { EndomorphmealplanPage } from './../pages/endomorphmealplan/endomorphmealplan';
+import { EcotmorphmealplanPage } from './../pages/ecotmorphmealplan/ecotmorphmealplan';
+import { MesomorphmealplanPage } from './../pages/mesomorphmealplan/mesomorphmealplan';
+import { CustommealplanPage } from './../pages/custommealplan/custommealplan';
 import { RecipedetailPage } from './../pages/recipedetail/recipedetail';
 import { WorkoutPage } from './../pages/workout/workout';
 import { RecipesPage } from './../pages/recipes/recipes';
@@ -16,6 +20,7 @@ import { WorkoutProvider } from '../providers/workout/workout';
 import { ProcessHttpmsgProvider } from '../providers/process-httpmsg/process-httpmsg';
 import { HttpModule } from '@angular/http';
 import { baseURL } from '../shared/baseurl';
+import { MealplanProvider } from '../providers/mealplan/mealplan';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,11 @@ import { baseURL } from '../shared/baseurl';
     ListPage,
     RecipesPage,
     WorkoutPage,
-    RecipedetailPage
+    RecipedetailPage,
+    CustommealplanPage,
+    MesomorphmealplanPage,
+    EcotmorphmealplanPage,
+    EndomorphmealplanPage
   ],
   imports: [
     HttpModule,
@@ -38,7 +47,11 @@ import { baseURL } from '../shared/baseurl';
     ListPage,
     RecipesPage,
     WorkoutPage,
-    RecipedetailPage
+    RecipedetailPage,
+    CustommealplanPage,
+    MesomorphmealplanPage,
+    EcotmorphmealplanPage,
+    EndomorphmealplanPage
   ],
   providers: [
     StatusBar,
@@ -49,7 +62,8 @@ import { baseURL } from '../shared/baseurl';
     RecipeProvider,
     WorkoutProvider,
     ProcessHttpmsgProvider,
-    { provide: 'BaseURL', useValue: baseURL }
+    { provide: 'BaseURL', useValue: baseURL },
+    MealplanProvider
   ]
 })
 export class AppModule {}

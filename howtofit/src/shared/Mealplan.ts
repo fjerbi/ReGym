@@ -1,9 +1,9 @@
-export interface Recipe{
+export interface Mealplan{
   id:number;
   title:string;
   description:string;
   calories:number;
-  recipe_picture:string;
+  meal_picture:string;
   active:boolean;
   type:string;
   budget:string;

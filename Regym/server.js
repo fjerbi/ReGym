@@ -5,7 +5,7 @@ const passport = require('passport');
 const path = require('path');
 const recipes = require('./routes/api/recipeApi');
 const users = require('./routes/api/userApi');
-
+const mealplans = require('./routes/api/mealplanApi');
 const app = express();
 
 // Body parser middleware
@@ -30,6 +30,7 @@ require('./config/passport')(passport);
 // Use Routes
 app.use('/api/users', users);
 app.use('/api/recipes', recipes);
+app.use('/api/mealplans', mealplans);
 // Server static assets if in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
@@ -40,6 +41,6 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));

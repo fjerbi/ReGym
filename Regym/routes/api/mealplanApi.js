@@ -2,14 +2,14 @@ var express = require("express");
 var router = express.Router();
 const uuid = require("uuid");
 const mongoose = require("mongoose"),
-  models = require("../../models/Recipe");
-  const Recipe = require("../../models/Recipe");
+  models = require("../../models/Mealplan");
+  const Meal = require("../../models/Mealplan");
 //Routes for '/api/'
 
 //call for adding a new sites (requires authentication)
 router.post("/", function(req, res) {
   console.log(req.body);
-  var newRecipe= new models.Recipe({
+  var newMealPlan= new models.Meal({
     title: req.body.title,
     description: req.body.description,
     calories: req.body.calories,
@@ -20,12 +20,12 @@ router.post("/", function(req, res) {
       carbohydrates: req.body.carbohydrates,
       fats: req.body.fats
     },
-    recipe_picture: req.body.recipe_picture,
+    meal_picture: req.body.meal_picture,
     active: req.body.active,
     date: new Date()
   });
 
-  newRecipe.save(function(err, newRecipe) {
+  newMealPlan.save(function(err, newMealPlan) {
     if (err) {
       res.send({ error: "error creating website" });
       return console.error(err);
@@ -38,7 +38,7 @@ router.post("/", function(req, res) {
 
 // READ (ALL)
 router.get("/", (req, res) => {
-  models.Recipe.find({})
+  models.Meal.find({})
     .then(result => {
       res.json(result);
     })
@@ -52,7 +52,7 @@ router.get("/", (req, res) => {
 
 //call for deleting a site (requires authentication)
 router.delete("/:id", function(req, res) {
-  models.Recipe.find({ _id: req.params.id }).remove(function(err, obj) {
+  models.Meal.find({ _id: req.params.id }).remove(function(err, obj) {
     if (err) return console.error(err);
     else {
       if (obj.result.n === 0) {
@@ -67,7 +67,7 @@ router.delete("/:id", function(req, res) {
 //call for updading a site (requires authentication)
 //just testing the rest of the attributes will be added
 router.put("/:id", function(req, res) {
-  models.Recipe.update(
+  models.Meal.update(
     { _id: req.params.id }, //condition
 
     req.body, //info updated
@@ -86,8 +86,8 @@ router.put("/:id", function(req, res) {
 
 
 
-router.get("/recipeendomorph", (req, res) => {
-  models.Recipe.find({target:"endomorph"})
+router.get("/mealplanendomorph", (req, res) => {
+  models.Meal.find({target:"endomorph"})
     .then(result => {
       res.json(result);
     })
@@ -100,8 +100,8 @@ router.get("/recipeendomorph", (req, res) => {
 
 
 
-router.get("/recipeectomorph", (req, res) => {
-  models.Recipe.find({target:"ectomorph"})
+router.get("/mealplanectomorph", (req, res) => {
+  models.Meal.find({target:"ectomorph"})
     .then(result => {
       res.json(result);
     })
@@ -113,8 +113,8 @@ router.get("/recipeectomorph", (req, res) => {
 });
 
 
-router.get("/recipemesomorph", (req, res) => {
-  models.Recipe.find({target:"mesomorph"})
+router.get("/mealplanmesomorph", (req, res) => {
+  models.Meal.find({target:"mesomorph"})
     .then(result => {
       res.json(result);
     })

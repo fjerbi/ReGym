@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CustommealplanPage } from '../custommealplan/custommealplan';
 
 /**
- * Generated class for the WorkoutPage page.
+ * Generated class for the EcotmorphmealplanPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,19 +10,16 @@ import { CustommealplanPage } from '../custommealplan/custommealplan';
 
 @IonicPage()
 @Component({
-  selector: 'page-workout',
-  templateUrl: 'workout.html',
+  selector: 'page-ecotmorphmealplan',
+  templateUrl: 'ecotmorphmealplan.html',
 })
-export class WorkoutPage {
+export class EcotmorphmealplanPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad WorkoutPage');
+    console.log('ionViewDidLoad EcotmorphmealplanPage');
   }
 
-  opencustommealPage() {
-    this.navCtrl.push(CustommealplanPage)
-  }
 }

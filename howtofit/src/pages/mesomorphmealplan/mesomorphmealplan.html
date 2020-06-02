@@ -1,0 +1,51 @@
+<!--
+  Generated template for the MenuPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu">
+
+      </ion-icon>
+    </button>
+    <ion-title>Mesomorph meal Plans examples</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-image">
+<div *ngIf="mealplans">
+
+
+  <ion-card *ngFor="let mealplan of mealplans"
+  (click)="mealplanSelected($event,mealplan)">
+
+    <ion-card-header>
+
+      <ion-card-title>{{mealplan.title}}</ion-card-title>
+    </ion-card-header>
+
+<img src="{{mealplan.meal_picture}}" />
+
+
+<ion-item>
+  <ion-badge color="success">Calories : {{mealplan.calories}}</ion-badge>
+</ion-item>
+<ion-card-content wrap>
+  Type :{{mealplan.type}}
+</ion-card-content>
+<button ion-button class="btn btn-primary">See more<ion-icon name="more"></ion-icon></button>
+  </ion-card>
+
+  <div [hidden]="mealplans || errMess">
+    <ion-spinner></ion-spinner>
+    <h4>Loading . . . Please Wait</h4>
+  </div>
+  <div *ngIf="errMess">
+    <h2>Error</h2>
+    <h4>{{errMess}}</h4>
+  </div>
+</div>
+</ion-content>

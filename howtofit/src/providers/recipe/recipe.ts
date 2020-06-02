@@ -35,6 +35,22 @@ return this.http.get(baseURL + 'api/recipes?active=true')
           .map(res => { return this.processHTTPMsgService.extractData(res)[0]; })
           .catch(error => { return this.processHTTPMsgService.handleError(error); });
 }
+getmesomorphRecipe(): Observable<Recipe[]> {
+  return this.http.get(baseURL + 'api/recipes?target=mesomorph')
+            .map(res => { return this.processHTTPMsgService.extractData(res)[0]; })
+            .catch(error => { return this.processHTTPMsgService.handleError(error); });
+  }
 
+  getendomorphRecipe(): Observable<Recipe[]> {
+    return this.http.get(baseURL + 'api/recipes?target=endomorph')
+              .map(res => { return this.processHTTPMsgService.extractData(res)[0]; })
+              .catch(error => { return this.processHTTPMsgService.handleError(error); });
+    }
+
+    getectomorphRecipe(): Observable<Recipe[]> {
+      return this.http.get(baseURL + 'api/recipes?target=ectomorph')
+                .map(res => { return this.processHTTPMsgService.extractData(res)[0]; })
+                .catch(error => { return this.processHTTPMsgService.handleError(error); });
+      }
 
 }
