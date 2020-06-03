@@ -33,6 +33,15 @@ $background-pale: #D1C4E9;
   background-size: cover;
 }
 
+.bg-home{
+  --background: url('../assets/imgs/recipesbg.png') no-repeat center center fixed;
+  background: url('../assets/imgs/recipesbg.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 
 .menubutton{
   background-color: transparent;

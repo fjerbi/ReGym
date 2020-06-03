@@ -21,7 +21,7 @@ import { ProcessHttpmsgProvider } from '../providers/process-httpmsg/process-htt
 import { HttpModule } from '@angular/http';
 import { baseURL } from '../shared/baseurl';
 import { MealplanProvider } from '../providers/mealplan/mealplan';
-
+import { IonicImageViewerModule } from 'ionic-img-viewer';
 @NgModule({
   declarations: [
     MyApp,
@@ -38,6 +38,7 @@ import { MealplanProvider } from '../providers/mealplan/mealplan';
   imports: [
     HttpModule,
     BrowserModule,
+    IonicImageViewerModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],

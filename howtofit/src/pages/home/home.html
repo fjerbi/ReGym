@@ -8,17 +8,18 @@
 </ion-header>
 
 
-  <ion-content>
-    <ion-slides pager="true">
-
-      <ion-slide style="background-size: cover;background-position: center;margin: auto;
-      z-index: 2;  background-image: url(https://wallpapervip.com/download/gym-wallpaper.jpg)"></ion-slide>
+  <ion-content  class="bg-home" >
 
 
-      <ion-slide style="background-image: url(https://wallpapervip.com/download/gym-wallpaper.jpg)"></ion-slide>
-      <ion-slide style="background-image: url(https://wallpapervip.com/download/gym-wallpaper.jpg)"></ion-slide>
+
+
+
+    <ion-slides class="image-slider" loop="true" slidesPerView="2">
+      <ion-slide *ngFor="let img of images">
+        <img src="assets/imgs/{{img}}" class="thumb-img" imageViewer/>
+        <h4>{{img}}</h4>
+      </ion-slide>
     </ion-slides>
 
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <button center ion-button secondary menuToggle>Toggle Menu</button>
 </ion-content>
