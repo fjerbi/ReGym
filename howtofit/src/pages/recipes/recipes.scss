@@ -1,3 +1,17 @@
 page-recipes {
 
+
 }
+.bgrecipes-image{
+  --background: url('../assets/imgs/recipesbg.png') no-repeat center center fixed;
+  background: url('../assets/imgs/recipesbg.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.linear {
+  --background: linear-gradient(#4786ef, #f4f5f8);
+}
+

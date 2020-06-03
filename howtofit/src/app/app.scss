@@ -14,8 +14,26 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-.abc {
+$lt-gray:#ddd;
+$background-dark: #512DA8;
+$background-light: #9575CD;
+$background-pale: #D1C4E9;
 
-  --background: var(--ion-background-color,linear-gradient(to  left,#E67D22, #1C4577)) !important;
+.background-pale{
+  background-color: $background-dark;
+}
 
+
+.bg-image{
+  --background: url('../assets/imgs/menubg1.png') no-repeat center center fixed;
+  background: url('../assets/imgs/menubg1.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+.menubutton{
+  background-color: transparent;
 }

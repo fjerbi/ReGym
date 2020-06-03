@@ -17,7 +17,7 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, icon: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
 
@@ -25,10 +25,10 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'Our Recipes', component: RecipesPage },
-      { title: 'Customized workouts', component: WorkoutPage },
-      { title: 'Customized meal plan', component: CustommealplanPage },
+      { title: 'Home', icon: 'home', component: HomePage },
+      { title: 'Our Recipes', icon: 'leaf' ,component: RecipesPage },
+      { title: 'Customized workouts',  icon: 'fitness',component: WorkoutPage },
+      { title: 'Customized meal plan', icon: 'calendar', component: CustommealplanPage },
     ];
 
   }
