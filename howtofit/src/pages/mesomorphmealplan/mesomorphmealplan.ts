@@ -1,3 +1,4 @@
+import { CustommealplandetailPage } from './../custommealplandetail/custommealplandetail';
 import { Mealplan } from './../../shared/Mealplan';
 import { MealplanProvider } from './../../providers/mealplan/mealplan';
 import { RecipedetailPage } from './../recipedetail/recipedetail';
@@ -32,10 +33,11 @@ export class MesomorphmealplanPage implements OnInit {
   }
 
   mealplanSelected(event, mealplan){
-    this.navCtrl.push(RecipedetailPage, {
+    this.navCtrl.push(CustommealplandetailPage, {
       mealplan:mealplan
     });
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad MesomorphmealplanPage');
   }

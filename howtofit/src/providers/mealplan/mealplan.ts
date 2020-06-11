@@ -35,10 +35,15 @@ export class MealplanProvider {
         }
 
         getectomorphMealplan(): Observable<Mealplan[]> {
-          return this.http.get(baseURL + 'api/mealplanmesomorph?target=ectomorph')
+          return this.http.get(baseURL + 'api/mealplans')
                     .map(res => { return this.processHTTPMsgService.extractData(res)[0]; })
                     .catch(error => { return this.processHTTPMsgService.handleError(error); });
           }
 
 
+          getmealplans(): Observable<Mealplan[]> {
+            return this.http.get(baseURL + 'api/mealplans')
+                      .map(res => { return this.processHTTPMsgService.extractData(res)[0]; })
+                      .catch(error => { return this.processHTTPMsgService.handleError(error); });
+            }
 }

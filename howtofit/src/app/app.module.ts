@@ -1,3 +1,4 @@
+import { CustommealplandetailPage } from './../pages/custommealplandetail/custommealplandetail';
 import { EndomorphmealplanPage } from './../pages/endomorphmealplan/endomorphmealplan';
 import { EcotmorphmealplanPage } from './../pages/ecotmorphmealplan/ecotmorphmealplan';
 import { MesomorphmealplanPage } from './../pages/mesomorphmealplan/mesomorphmealplan';
@@ -22,6 +23,8 @@ import { HttpModule } from '@angular/http';
 import { baseURL } from '../shared/baseurl';
 import { MealplanProvider } from '../providers/mealplan/mealplan';
 import { IonicImageViewerModule } from 'ionic-img-viewer';
+import { CartProvider } from '../providers/cart/cart';
+import { IonicStorageModule } from '@ionic/storage';
 @NgModule({
   declarations: [
     MyApp,
@@ -33,12 +36,14 @@ import { IonicImageViewerModule } from 'ionic-img-viewer';
     CustommealplanPage,
     MesomorphmealplanPage,
     EcotmorphmealplanPage,
-    EndomorphmealplanPage
+    EndomorphmealplanPage,
+    CustommealplandetailPage
   ],
   imports: [
     HttpModule,
     BrowserModule,
     IonicImageViewerModule,
+    IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -52,7 +57,8 @@ import { IonicImageViewerModule } from 'ionic-img-viewer';
     CustommealplanPage,
     MesomorphmealplanPage,
     EcotmorphmealplanPage,
-    EndomorphmealplanPage
+    EndomorphmealplanPage,
+    CustommealplandetailPage
   ],
   providers: [
     StatusBar,
@@ -64,7 +70,8 @@ import { IonicImageViewerModule } from 'ionic-img-viewer';
     WorkoutProvider,
     ProcessHttpmsgProvider,
     { provide: 'BaseURL', useValue: baseURL },
-    MealplanProvider
+    MealplanProvider,
+    CartProvider
   ]
 })
 export class AppModule {}
