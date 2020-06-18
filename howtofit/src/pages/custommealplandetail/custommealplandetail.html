@@ -6,10 +6,90 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>custommealplandetail</ion-title>
+    <ion-title>Meal detail</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-card *ngIf="mealplan">
+    <img src="{{mealplan.meal_picture}}"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{mealplan.title | uppercase}}
+      </ion-card-title>
+      <ion-item>
+        <ion-badge color="success">Calories : {{mealplan.calories}}</ion-badge>
+      </ion-item>
+      <p>
+        {{mealplan.description}}
+      </p>
+      <ion-badge color="green"><p>Meals</p></ion-badge>
+      <ion-list>
+        <ion-item>
+          <p>Meal 1 :{{mealplan.meals[0]}}</p>
 
-</ion-content>
+        </ion-item>
+        <ion-item>
+
+          <p>Meal 2 :{{mealplan.meals[1]}}</p>
+
+        </ion-item>
+        <ion-item>
+
+          <p>Meal 3 :{{mealplan.meals[2]}}</p>
+
+        </ion-item>
+        <ion-item>
+
+          <p>Meal 4 :{{mealplan.meals[3]}}</p>
+
+        </ion-item>
+        <ion-item>
+
+          <p>Meal 5 :{{mealplan.meals[4]}}</p>
+        </ion-item>
+        </ion-list>
+
+<ion-badge color="fitness">Nutrition Facts</ion-badge>
+<ion-list>
+  <ion-item>
+    <p>{{mealplan.nutritionfacts[0]}}</p>
+    </ion-item>
+    <ion-item>
+      <p>{{mealplan.nutritionfacts[1]}}</p>
+      </ion-item>
+      <ion-item>
+        <p>{{mealplan.nutritionfacts[2]}}</p>
+        </ion-item>
+    </ion-list>
+
+
+
+    </ion-card-content>
+
+  </ion-card>
+  <div [hidden]="mealplan || errMess">
+    <ion-spinner></ion-spinner>
+    <h4>Loading . . . Please Wait</h4>
+  </div>
+  <div *ngIf="errMess">
+    <h2>Error</h2>
+    <h4>{{errMess}}</h4>
+  </div>
+
+
+
+  <ion-fab bottom right >
+  <button ion-fab >
+    <ion-icon name="heart-outline"></ion-icon>
+  </button>
+  </ion-fab>
+
+  <ion-fab bottom right>
+    <button ion-fab>
+      <ion-icon name="heart"></ion-icon>
+    </button>
+    </ion-fab>
+
+  </ion-content>
+

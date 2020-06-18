@@ -16,10 +16,11 @@
 </ion-header>
 
 <ion-content class="card-background-image">
+  <ion-searchbar placeholder="Search by any criteria" animated  [(ngModel)]="term"></ion-searchbar>
 <div *ngIf="mealplans">
 
 
-  <ion-card *ngFor="let mealplan of mealplans"
+  <ion-card *ngFor="let mealplan of mealplans| filter:term"
   (click)="mealplanSelected($event,mealplan)">
 
     <ion-card-header>
@@ -29,12 +30,11 @@
 
 <img src="{{mealplan.meal_picture}}" />
 
-
 <ion-item>
-  <ion-badge color="success">Calories : {{mealplan.calories}}</ion-badge>
+  <ion-badge color="fitness">Calories : {{mealplan.calories}}</ion-badge>
 </ion-item>
 <ion-card-content wrap>
-  Type :{{mealplan.type}}
+  Type : {{mealplan.type}} budget meal
 </ion-card-content>
 <button ion-button class="btn btn-primary" (click)="mealplanSelected($event,mealplan)">See more<ion-icon name="more"></ion-icon></button>
   </ion-card>

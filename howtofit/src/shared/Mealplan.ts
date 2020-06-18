@@ -7,6 +7,6 @@ export interface Mealplan{
   active:boolean;
   type:string;
   budget:string;
-
-
+  meals:Array<String>;
+  nutritionfacts:Array<String>;
 }

@@ -18,7 +18,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'mesomorphmealplan.html',
 })
 export class MesomorphmealplanPage implements OnInit {
-
+  term: string;
   mealplans: Mealplan[];
   errMess:string;
   constructor(public navCtrl: NavController, public navParams: NavParams,

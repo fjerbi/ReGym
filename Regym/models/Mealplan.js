@@ -8,10 +8,11 @@ const mealplanSchema = new mongoose.Schema({
     calories:{ type: Number},
     target:{type:String},
     budget:{type:String},
+    meals:{
+type:Array
+    },
     nutritionfacts: {
-        proteines: { type: Number },
-        carbohydrates: { type: Number },
-        fats: { type: Number}
+      type:Array
       },
     meal_picture:{ type: String },
     active:{ type: Boolean }

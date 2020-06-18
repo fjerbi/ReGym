@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Mealplan } from './../../shared/Mealplan';
+import { Component, Inject } from '@angular/core';
+import { IonicPage, NavController, NavParams, ToastController, PopoverController, ModalController, ActionSheetController } from 'ionic-angular';
 
 /**
  * Generated class for the CustommealplandetailPage page.
@@ -14,12 +15,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'custommealplandetail.html',
 })
 export class CustommealplandetailPage {
+  mealplan:Mealplan;
+  errMess: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    @Inject('BaseURL') private BaseURL,
+  private toastCtrl:ToastController,
+  private popoverCtrl:PopoverController,
+  private modalCtrl: ModalController,
+  private actionSheetCtrl: ActionSheetController) {
+    this.mealplan = navParams.get('mealplan');
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CustommealplandetailPage');
+    console.log('ionViewDidLoad custom meal detail');
   }
 
 }

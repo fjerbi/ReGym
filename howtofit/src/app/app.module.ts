@@ -1,3 +1,5 @@
+import { RegisterPage } from './../pages/register/register';
+import { LoginPage } from './../pages/login/login';
 import { CustommealplandetailPage } from './../pages/custommealplandetail/custommealplandetail';
 import { EndomorphmealplanPage } from './../pages/endomorphmealplan/endomorphmealplan';
 import { EcotmorphmealplanPage } from './../pages/ecotmorphmealplan/ecotmorphmealplan';
@@ -13,7 +15,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { RecipeProvider } from '../providers/recipe/recipe';
@@ -25,6 +27,7 @@ import { MealplanProvider } from '../providers/mealplan/mealplan';
 import { IonicImageViewerModule } from 'ionic-img-viewer';
 import { CartProvider } from '../providers/cart/cart';
 import { IonicStorageModule } from '@ionic/storage';
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 @NgModule({
   declarations: [
     MyApp,
@@ -37,12 +40,15 @@ import { IonicStorageModule } from '@ionic/storage';
     MesomorphmealplanPage,
     EcotmorphmealplanPage,
     EndomorphmealplanPage,
-    CustommealplandetailPage
+    CustommealplandetailPage,
+    LoginPage,
+    RegisterPage
   ],
   imports: [
     HttpModule,
     BrowserModule,
     IonicImageViewerModule,
+    Ng2SearchPipeModule,
     IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp),
   ],
@@ -58,7 +64,9 @@ import { IonicStorageModule } from '@ionic/storage';
     MesomorphmealplanPage,
     EcotmorphmealplanPage,
     EndomorphmealplanPage,
-    CustommealplandetailPage
+    CustommealplandetailPage,
+    LoginPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,
@@ -71,7 +79,8 @@ import { IonicStorageModule } from '@ionic/storage';
     ProcessHttpmsgProvider,
     { provide: 'BaseURL', useValue: baseURL },
     MealplanProvider,
-    CartProvider
+    CartProvider,
+    AuthServiceProvider
   ]
 })
 export class AppModule {}

@@ -15,11 +15,8 @@ router.post("/", function(req, res) {
     calories: req.body.calories,
     target: req.body.target,
     budget: req.body.budget,
-    nutritionfacts: {
-      proteines: req.body.proteines,
-      carbohydrates: req.body.carbohydrates,
-      fats: req.body.fats
-    },
+    meals:req.body.meals,
+    nutritionfacts: req.body.nutritionfacts,
     meal_picture: req.body.meal_picture,
     active: req.body.active,
     date: new Date()

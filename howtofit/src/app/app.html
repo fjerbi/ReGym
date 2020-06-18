@@ -15,6 +15,12 @@
           </ion-thumbnail>
           <h3 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">How to fit</h3>
         </ion-list-header>
+        <button color="primary-pale" menuClose ion-item (click)="openLogin()">
+          <ion-icon name="log-in" item-left></ion-icon>
+          Login
+        </button>
+        Hello u are connected{{user.username}}
+
         <button   style="background: transparent;"  menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
           <ion-icon style="color: orange;" [name]="p.icon" item-left></ion-icon>
             {{p.title}}
