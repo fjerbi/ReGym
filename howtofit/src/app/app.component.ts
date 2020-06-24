@@ -1,3 +1,5 @@
+import { TrackPage } from './../pages/track/track';
+
 import { User } from './../shared/user';
 
 import { Storage } from '@ionic/storage';
@@ -10,6 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { CustommealplanPage } from '../pages/custommealplan/custommealplan';
+import { Chat } from '../pages/chat/chat';
 
 
 @Component({
@@ -30,10 +33,10 @@ loggedIn:any;
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', icon: 'home', component: HomePage },
-      { title: 'Our Recipes', icon: 'leaf' ,component: RecipesPage },
-      { title: 'Customized workouts',  icon: 'fitness',component: WorkoutPage },
-      { title: 'Customized meal plan', icon: 'calendar', component: CustommealplanPage },
+      { title: 'Home', icon: 'message.png', component: HomePage },
+      { title: 'Our Recipes', icon: 'message.png' ,component: RecipesPage },
+      { title: 'Customized workouts',  icon: 'message.png',component: WorkoutPage },
+      { title: 'Customized meal plan', icon: 'message.png', component: CustommealplanPage },
     ];
     storage.get('user').then((val) => {
 
@@ -61,6 +64,23 @@ loggedIn:any;
     let modal = this.modalCtrl.create( LoginPage);
     modal.present();
   }
+  openChat() {
+    let modal = this.modalCtrl.create( Chat);
+    modal.present();
+  }
+  openRecipes() {
+    this.nav.push(RecipesPage)
+  }
+  openCustomMealPlans() {
+    this.nav.push(CustommealplanPage)
+  }
+  openCustomWorkoutplan() {
+    this.nav.push(WorkoutPage)
+  }
+
+  openTrackUser() {
+    this.nav.push(TrackPage)
+  }
   checkLoggedIn(){
     if(this.storage.get('user') === null){
       this.loggedIn=false;
@@ -68,4 +88,5 @@ loggedIn:any;
     this.loggedIn=true;
   }
   }
+
 }

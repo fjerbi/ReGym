@@ -8,16 +8,16 @@
 </ion-header>
 
 
-  <ion-content  class="bg-home" >
+  <ion-content  class="bgrecipes-image" >
 
-
+<h1 class="head">be the winner</h1>
 
 
 
     <ion-slides class="image-slider" loop="true" slidesPerView="2">
       <ion-slide *ngFor="let img of images">
         <img src="assets/imgs/{{img}}" class="thumb-img" imageViewer/>
-        <h4>{{img}}</h4>
+
       </ion-slide>
     </ion-slides>
 

@@ -22,13 +22,23 @@
     "@angular/platform-browser-dynamic": "5.2.11",
     "@ionic-native/core": "4.20.0",
     "@ionic-native/dialogs": "^4.7.0",
+    "@ionic-native/geolocation": "^4.12.0",
     "@ionic-native/native-storage": "^4.9.0",
+    "@ionic-native/paypal": "^4.7.0",
     "@ionic-native/splash-screen": "4.20.0",
     "@ionic-native/status-bar": "4.20.0",
     "@ionic/storage": "2.2.0",
+    "@turf/collect": "^6.0.1",
+    "@turf/turf": "^5.1.6",
+    "@types/esri-leaflet": "^2.1.4",
+    "@types/leaflet": "^1.2.10",
+    "card.io.cordova.mobilesdk": "2.1.0",
+    "com.paypal.cordova.mobilesdk": "3.5.0",
     "cordova-android": "7.1.4",
+    "cordova-browser": "5.0.4",
     "cordova-plugin-device": "^2.0.3",
     "cordova-plugin-dialogs": "^2.0.2",
+    "cordova-plugin-geolocation": "^4.0.1",
     "cordova-plugin-ionic-keyboard": "^2.2.0",
     "cordova-plugin-ionic-webview": "^4.2.1",
     "cordova-plugin-nativestorage": "^2.3.2",
@@ -38,13 +48,17 @@
     "ionic-angular": "3.9.9",
     "ionic-img-viewer": "^2.9.0",
     "ionicons": "3.0.0",
+    "mapbox-gl": "^1.11.0",
+    "ng-socket-io": "^0.2.4",
     "ng2-search-filter": "^0.5.1",
     "rxjs": "5.5.11",
+    "socket.io-client": "^2.3.0",
     "sw-toolbox": "3.6.0",
     "zone.js": "0.8.29"
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.2.4",
+    "mapbox-gl": "^0.48.0",
     "typescript": "2.6.2"
   },
   "description": "An Ionic project",
@@ -59,10 +73,13 @@
       "cordova-plugin-ionic-webview": {
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
-      "cordova-plugin-ionic-keyboard": {}
+      "cordova-plugin-ionic-keyboard": {},
+      "com.paypal.cordova.mobilesdk": {},
+      "cordova-plugin-geolocation": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "browser"
     ]
   }
 }

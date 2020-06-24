@@ -1,10 +1,16 @@
 page-home {
 
-ion-slide.swiper-slide {
-    left:25%;
+
+}
+.bgrecipes-image{
+  --background: url('../assets/imgs/recipesbg2.pngg') no-repeat center center fixed;
+  background: url('../assets/imgs/recipesbg2.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-.thumb-img {
-    padding: 10px;
-}
+.linear {
+  --background: linear-gradient(#4786ef, #f4f5f8);
 }

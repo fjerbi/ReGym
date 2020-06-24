@@ -102,4 +102,7 @@
     <plugin name="cordova-plugin-nativestorage" spec="2.3.2" />
     <plugin name="cordova-plugin-dialogs" spec="2.0.2" />
     <engine name="android" spec="7.1.4" />
+    <plugin name="com.paypal.cordova.mobilesdk" spec="3.5.0" />
+    <engine name="browser" spec="~5.0.4" />
+    <plugin name="cordova-plugin-geolocation" spec="4.0.2" />
 </widget>

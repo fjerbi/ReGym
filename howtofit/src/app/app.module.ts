@@ -1,3 +1,6 @@
+import { TrackPage } from './../pages/track/track';
+import { Chat } from './../pages/chat/chat';
+import { ChatService } from './../providers/chat-service/chat-service';
 import { RegisterPage } from './../pages/register/register';
 import { LoginPage } from './../pages/login/login';
 import { CustommealplandetailPage } from './../pages/custommealplandetail/custommealplandetail';
@@ -11,7 +14,7 @@ import { RecipesPage } from './../pages/recipes/recipes';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-
+import { PayPal } from '@ionic-native/paypal'
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -28,6 +31,9 @@ import { IonicImageViewerModule } from 'ionic-img-viewer';
 import { CartProvider } from '../providers/cart/cart';
 import { IonicStorageModule } from '@ionic/storage';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { TrackProvider } from '../providers/track/track';
+import { Geolocation } from '@ionic-native/geolocation';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -42,7 +48,9 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     EndomorphmealplanPage,
     CustommealplandetailPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    Chat,
+    TrackPage
   ],
   imports: [
     HttpModule,
@@ -66,7 +74,9 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     EndomorphmealplanPage,
     CustommealplandetailPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    Chat,
+    TrackPage
   ],
   providers: [
     StatusBar,
@@ -80,7 +90,12 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     { provide: 'BaseURL', useValue: baseURL },
     MealplanProvider,
     CartProvider,
-    AuthServiceProvider
+    AuthServiceProvider,
+    ChatService,
+    PayPal,
+    TrackProvider,
+    TrackProvider,
+    Geolocation
   ]
 })
 export class AppModule {}

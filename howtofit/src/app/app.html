@@ -15,15 +15,31 @@
           </ion-thumbnail>
           <h3 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">How to fit</h3>
         </ion-list-header>
-        <button color="primary-pale" menuClose ion-item (click)="openLogin()">
+        <button  style="background: transparent;"  menuClose ion-item (click)="openLogin()">
           <ion-icon name="log-in" item-left></ion-icon>
           Login
         </button>
-        Hello u are connected{{user.username}}
+        <button  style="background: transparent;"  menuClose ion-item (click)="openChat()">
+          <img src="assets/icon/message.png" class="thumb-img" imageViewer/>
+          Chat
+        </button>
 
-        <button   style="background: transparent;"  menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-          <ion-icon style="color: orange;" [name]="p.icon" item-left></ion-icon>
-            {{p.title}}
+        <button style="background: transparent;"  menuClose ion-item (click)="openRecipes()">
+          <img   src="assets/icon/vegetable.png" class="thumb-img" imageViewer/>
+          Recipes
+        </button>
+        <button  style="background: transparent;"  menuClose ion-item (click)="openCustomMealPlans()">
+          <img src="assets/icon/vegetable.png" class="thumb-img" imageViewer/>
+          Custom Meal plans
+        </button>
+        <button  style="background: transparent;" menuClose ion-item (click)="openCustomWorkoutplan()">
+          <img src="assets/icon/exercise.png" class="thumb-img" imageViewer/>
+          Custom workout plans
+        </button>
+
+        <button  style="background: transparent;" menuClose ion-item (click)="openTrackUser()">
+          <img src="assets/icon/exercise.png" class="thumb-img" imageViewer/>
+          Track Me
         </button>
 
       </ion-list>
